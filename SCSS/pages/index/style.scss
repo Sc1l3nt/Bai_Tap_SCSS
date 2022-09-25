@@ -1,0 +1,26 @@
+// variable
+@import '/SCSS/themes/variable';
+
+// Main
+@import '/SCSS/Base/base';
+
+// header
+@import '../header/header';
+
+// carousel
+@import '../carousel/carousel';
+
+// teacher
+@import '../teachers/teacher';
+
+// info
+@import '../info/info';
+
+// footer
+@import '../footer/footer';
+
+// animation
+@import '/SCSS/animation/animation/animation.scss';
+
+// reponsive
+@import '/SCSS/themes/reponsive';

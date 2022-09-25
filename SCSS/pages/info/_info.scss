@@ -1,0 +1,87 @@
+.info{
+    position: relative;
+    .img-bg{
+        position: absolute;
+        z-index: 5;
+        @extend .bg-bottom;
+    }
+    .container{
+        position: relative;
+        z-index: 10;
+        padding-top: 100px;
+        padding-bottom: 20px;
+        .flex-item{
+            .item-left{
+                text-align: right;
+                img{
+                    width: 80%;
+                }
+                animation: fadeRight 1s;
+            }
+            .item-right{
+                animation: fadeIn 1s;
+                .main{
+                    .card{
+                        width: 80%;
+                        background: $bg-c1-light;
+                        @extend .box-shadow-1;
+                        .card-body{
+                            @include text-base();
+                            margin: 10px;
+                            .card-title{
+                                @include text($fs-3a-xl, $fw-3xl, $text-c1-dark);
+                                margin-bottom: 30px;
+                            }
+
+                            .name-mail{
+                                i{
+                                    @include text($fs-xl, $fw-3xl, $text-c1-violet);
+                                    display: inline-block;
+                                    transform: translate(20px, 36px);
+                                }
+                                .name{
+                                    .text{
+                                        @extend .input-text-1;
+                                    }
+                                }
+                                .mail{
+                                    .email{
+                                        @extend .input-text-1;
+                                    }
+                                }
+                            }
+
+                            .language{
+                                i{
+                                    @include text($fs-xl, $fw-3xl, $text-c1-violet);
+                                    display: inline-block;
+                                    transform: translate(20px, 36px);
+                                }
+                                .cars{
+                                    @extend .input-text-1;
+                                }
+                            }
+
+                            .comment{
+                                i{
+                                    @include text($fs-xl, $fw-3xl, $text-c1-violet);
+                                    display: inline-block;
+                                    transform: translate(20px, 36px);
+                                }
+
+                                .text{
+                                    @extend .input-text-2;
+                                }
+                            }
+
+                            .btn-1{
+                                margin: 30px 20px;
+                                @include button-1(10px, 40px, $fs-sm, $fw-2xl);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,186 @@
+// TEXT:
+// Font-size
+$fs-xsm: 12px;
+$fs-sm: 14px;
+$fs-base: 16px;
+$fs-xl: 18px;
+$fs-2xl: 20px;
+$fs-2a-xl: 25px;
+$fs-3xl: 30px;
+$fs-3a-xl: 35px;
+$fs-4xl: 40px;
+$fs-5xl: 50px;
+$fs-6xl: 60px;
+
+// Font-weight
+$fw-sm: 300;
+$fw-base: 400;
+$fw-xl: 500;
+$fw-2xl: 600;
+$fw-3xl: 700;
+$fw-4xl: 800;
+$fw-5xl: 900;
+
+// Color:
+$text-c1-violet: #B61984;
+$text-c2-violet: #E411AC;
+$text-c1-dark: #000000;
+$text-c1-light: #FFFFFF;
+
+@mixin text-base {
+    font-size: $fs-sm;
+    font-weight: $fw-xl;
+    color: $text-c1-dark;
+}
+
+@mixin text ($fs, $fw, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+}
+
+// BACKGROUND:
+// background-color:
+$bg-c1-violet: #B61984;
+$bg-c2-violet: #DCD1F3;
+$bg-c3-violet: #AA017E;
+$bg-c1-light: #FFFFFF;
+
+// BORDER:
+// border-color:
+$bd-c1-violet: #B61984;
+$bd-c1-light: #FFFFFF;
+$bd-c2-light: rgba(#FFFFFF, 0.1);
+$bd-c1-dark: #000000;
+$bd-c2-dark: rgba(#000000,0.05);
+
+// BUTTON:
+@mixin button-1 ($px, $py, $fs, $fw){
+    padding: $px $py;
+    background: $bg-c1-violet;
+    border-radius: 50px;
+    border: 2px solid $bd-c1-violet;
+    position: relative;
+
+    .main{
+        background: transparent;
+        position: relative;
+        z-index: 10;
+        @include text($fs, $fw, $text-c1-light);
+        transition: all 0.5s;
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        z-index: 5;
+        opacity: 0;
+        top: 50%;
+        left: 10%;
+        width: 80%;
+        height: 0%;
+        background: $bg-c1-light;
+        border-radius: 50px;
+        transition: all 0.2s;
+    }
+    &:hover{
+        .main{
+            color: $text-c1-violet;
+        }
+        &::after{
+            opacity: 1;
+            top: 0px;
+            left: 0px;
+            height: calc(100%);
+            width: calc(100%);
+        }
+    }
+}
+
+@mixin button-2 ($px, $py, $fs, $fw){
+    padding: $px $py;
+    background: $bg-c1-light;
+    border-radius: 50px;
+    border: 2px solid $bd-c1-light;
+    position: relative;
+
+    .main{
+        background: transparent;
+        position: relative;
+        z-index: 10;
+        @include text($fs, $fw, $text-c1-dark);
+        transition: all 0.5s;
+    }
+
+    &::after{
+        content: '';
+        position: absolute;
+        z-index: 5;
+        opacity: 0;
+        top: 50%;
+        left: 10%;
+        width: 80%;
+        height: 0%;
+        background: $bg-c1-violet;
+        border-radius: 50px;
+        transition: all 0.2s;
+    }
+    &:hover{
+        .main{
+            color: $text-c1-light;
+        }
+        &::after{
+            opacity: 1;
+            top: 0px;
+            left: 1px;
+            height: calc(100% - 1px);
+            width: calc(100% - 1px);
+        }
+    }
+}
+
+// Component
+.bg-bottom{
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bg-top{
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.box-shadow-1{
+    box-shadow: 0px 15px 20px 5px rgba(0,0,0,0.15);
+}
+
+.input-text-1{
+    border: 2px solid $bd-c2-dark;
+    border-radius: 50px;
+    height: 40px;
+    width: 100%;
+    padding-left: 50px;
+}
+
+.input-text-2{
+    border: 2px solid $bd-c2-dark;
+    border-radius: 20px;
+    height: 150px;
+    width: 100%;
+    padding: 10px 0;
+    padding-left: 50px;
+}
+
+.input-text-3{
+    border: 2px solid $bd-c2-light;
+    border-radius: 50px;
+    background: $bg-c3-violet;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    &::placeholder{
+        color: $text-c1-light;
+    }
+}

@@ -1,0 +1,46 @@
+@media only screen and (max-width: 992px) {
+    .carousel{
+        .container{
+            .item{
+                .item-right{
+                    p{
+                        font-size: $fs-base;
+                    }
+                    h1{
+                        font-size: $fs-4xl;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header{
+        .navbar{
+            .container{
+                .collapse{
+                    background: $bg-c1-light;
+                    .navbar-nav{
+                        .nav-item{
+                            a{
+                                &::after{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .carousel{
+        .container{
+            .item{
+                .item-right{
+                    margin-top: 50px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+header{
+    display: block;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    animation: fadeDown 1s;
+    .navbar{
+        .container{
+            .logo{
+                .icon{
+                    width: 80px;
+                    height: 80px;
+                    cursor: pointer;
+                }
+            }
+            .collapse{
+                @include text($fs-sm, $fw-2xl, $text-c1-dark);
+                .navbar-nav{
+                    .nav-item{
+                        padding: 0 20px;
+                        a{
+                            position: relative;
+
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                bottom: -50%;
+                                left: calc(100%/2 - 5px);
+                                width: 10px;
+                                height: 10px;
+                                background: $bg-c1-violet;
+                                border-radius: 50%;
+                                opacity: 0;
+                            }
+
+                            &.active, &:hover{
+                                color: $text-c1-violet;
+
+                                &::after{
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .btn-1{
+                margin: 0 20px;
+                @include button-1(10px, 15px, $fs-sm, $fw-xl);
+            }
+            .icon-link{
+                a{
+                    margin: 0 5px;
+                    &:hover{
+                        color: $text-c1-violet;
+                    }
+                }
+            }
+        }
+    }
+}
